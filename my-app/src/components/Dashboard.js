@@ -94,7 +94,7 @@ const Dashboard = ({ user, pages, selectedPage, setSelectedPage, accessToken }) 
     const handleError = (err, metric) => {
         if (err.response && err.response.data.error) {
             const errorCode = err.response.data.error.code;
-            if (errorCode === 100) {
+            if (errorCode === 100 || errorCode===190) {
                 setErrorMessages((prev) => ({
                     ...prev,
                     [metric]: `Insufficient data for ${metric}.`,
