@@ -62,6 +62,7 @@ const Dashboard = ({ user, pages, selectedPage, setSelectedPage, accessToken }) 
             }
 
             const response = await axios.get(url);
+            console.log('Impressions:', response.data);
             const impressionsData = response.data.data[0]?.values[0]?.value || 0;
             setImpressions(impressionsData);
             setErrorMessages((prev) => ({ ...prev, impressions: null }));
