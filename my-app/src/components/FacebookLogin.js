@@ -42,7 +42,7 @@ const FacebookLogin = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5000/api/auth/logout');
+            await axios.post('https://facebook-graph-api-insights-backend.onrender.com/api/auth/logout');
             setUser(null);
             setPages([]);
             setSelectedPage('');
@@ -54,7 +54,7 @@ const FacebookLogin = () => {
     
     const fetchUserData = async (accessToken) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/facebook', { accessToken });
+            const { data } = await axios.post('https://facebook-graph-api-insights-backend.onrender.com/api/auth/facebook', { accessToken });
             setUser(data);
         } catch (error) {
             console.error('Error fetching user data:', error);
