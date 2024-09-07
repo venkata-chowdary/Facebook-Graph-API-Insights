@@ -58,7 +58,7 @@ app.post('/api/auth/facebook', async (req, res) => {
         }
 
         // req.session.userId = user._id;
-
+        console.log("user data requested")
         res.send({ id, name, email, picture: picture.data.url });
     } catch (error) {
         console.error('Error fetching user data:', error);
