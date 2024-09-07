@@ -14,7 +14,6 @@ const FacebookLogin = () => {
                 appId:process.env.REACT_APP_API_KEY ,
                 cookie: true,
                 xfbml: true,
-                status: true,
                 version: 'v20.0'
             });
         };
