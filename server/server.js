@@ -9,7 +9,9 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    origin: 'https://facebook-graph-api-insights-frontend.onrender.com', // Allow your frontend domain
+  origin: 'https://facebook-graph-api-insights-frontend.onrender.com', // Or use '*' for all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(bodyParser.json());
 
