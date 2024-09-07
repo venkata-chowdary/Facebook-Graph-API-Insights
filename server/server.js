@@ -8,7 +8,9 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://facebook-graph-api-insights-frontend.onrender.com', // Allow your frontend domain
+}));
 app.use(bodyParser.json());
 
 function connection() {
